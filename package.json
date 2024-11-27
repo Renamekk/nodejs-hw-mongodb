@@ -2,12 +2,12 @@
   "name": "nodejs-basics",
   "version": "1.0.0",
   "description": "",
-  "type": "module",  
-  "main": "src/index.js",  
+  "type": "module",
+  "main": "src/index.js",
   "scripts": {
     "lint": "eslint src/**/*.js",
-    "start": "node ./src/index.js",  
-    "dev": "nodemon src/index.js"
+    "start": "node ./src/index.js", 
+    "dev": "nodemon ./src/index.js" 
   },
   "keywords": [],
   "author": "",
@@ -26,8 +26,5 @@
     "http-errors": "^2.0.0",
     "mongoose": "^8.7.2",
     "pino-http": "^10.3.0"
-  },
-  "engines": {
-    "node": ">=16.x"
   }
 }
