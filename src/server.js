@@ -30,7 +30,6 @@ const setupServer = () => {
     });
   });
 
-
   app.use((error, req, res)=> {
     res.status(500).json({
         message: error.message,
