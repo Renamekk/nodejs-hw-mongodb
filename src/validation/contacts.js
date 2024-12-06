@@ -11,6 +11,7 @@ export const createContactsSchema = Joi.object({
     .max(20)
     .valid(...contactTypeList)
     .required(),
+  userId: Joi.string().required(),
 });
 
 export const updateContactsSchema = Joi.object({
