@@ -8,6 +8,7 @@ import {
 } from '../controllers/contacts.js';
 import { ctrlWrapper } from '../utils/ctrlWrapper.js';
 import { authenticate } from '../middlewares/authenticate.js';
+import { upload } from '../middlewares/multer.js';
 
 const contactsRouter = Router();
 
@@ -17,9 +18,14 @@ contactsRouter.get(
   '/contacts/:contactId',
   ctrlWrapper(getContactByIdController),
 );
-contactsRouter.post('/contacts', ctrlWrapper(createContactController));
+contactsRouter.post(
+  '/contacts',
+  upload.single('photo'),
+  ctrlWrapper(createContactController),
+);
 contactsRouter.patch(
   '/contacts/:contactId',
+  upload.single('photo'),
   ctrlWrapper(updateContactController),
 );
 contactsRouter.delete(
