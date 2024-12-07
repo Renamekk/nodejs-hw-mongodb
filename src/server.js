@@ -7,6 +7,7 @@ import { notFoundHandler } from './middlewares/notFoundHandler.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 import cookieParser from 'cookie-parser';
 import authRouter from './routes/auth.js';
+import { UPLOAD_DIR } from './constants/auth.js';
 
 const PORT = Number(env('PORT', '3000'));
 
@@ -16,7 +17,7 @@ export const startServer = () => {
   app.use(cors());
   app.use(pino({ transport: { target: 'pino-pretty' } }));
   app.use(cookieParser());
-
+  app.use('/uploads', express.static(UPLOAD_DIR));
   app.use(authRouter);
   app.use(contactsRouter);
 
