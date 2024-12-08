@@ -7,13 +7,17 @@
   "scripts": {
     "lint": "eslint src/**/*.js",
     "start": "node ./src/index.js",
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "build": "npm run build-docs",
+    "build-docs": "redocly bundle --ext json -o docs/swagger.json",
+    "preview-docs": "redocly preview-docs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@eslint/js": "^9.13.0",
+    "@redocly/cli": "^1.25.14",
     "eslint": "^9.13.0",
     "globals": "^15.11.0",
     "nodemon": "^3.1.7",
@@ -27,6 +31,7 @@
     "crypto": "^1.0.1",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
+    "google-auth-library": "^9.15.0",
     "handlebars": "^4.7.8",
     "http-errors": "^2.0.0",
     "joi": "^17.13.3",
@@ -35,6 +40,7 @@
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.16",
     "pino": "^9.5.0",
-    "pino-http": "^10.3.0"
+    "pino-http": "^10.3.0",
+    "swagger-ui-express": "^5.0.1"
   }
 }
